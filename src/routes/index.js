@@ -1,9 +1,10 @@
 const postQuesIntoDb = require('./postQuesIntoDb');
 const postOptionsIntoDb = require('./postOptionsIntoDb');
 const fetchData = require('./fetchData');
-const setUser = require('./setUser');
+const setUserScore = require('./setUserScore');
 const updateOption = require('./updateOption');
 const fetchOption = require('./fetchOption');
+const getUserScore = require('./getUserScores');
 
 const getHelloWorld = (request, response) => {
   response('On root. Go to login.');
@@ -16,6 +17,7 @@ module.exports = [{
 }].concat(postQuesIntoDb)
   .concat(postOptionsIntoDb)
   .concat(fetchData)
-  .concat(setUser)
+  .concat(setUserScore)
+  .concat(getUserScore)
   .concat(updateOption)
   .concat(fetchOption);
