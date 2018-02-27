@@ -1,22 +1,25 @@
-const Models = require('../../models/');
+const Model = require('../../models');
 
+const getQuesAndOptions = () => Model.quizques.findAll({ raw: true }).then((data) => {
+  const aP = [];
+  data.forEach((ele) => {
+    let newObj = {};
+    const optionTotal = [];
+    const quesidHere = ele.quesid;
+    aP.push(Model.quizoptions.findAll({
+      where: { quesid: quesidHere },
+      raw: true,
+    }).then((record) => {
+      record.forEach((eachRecord) => {
+        optionTotal.push(eachRecord.option);
+      });
+      newObj = ele;
+      newObj.options = optionTotal;
+      return newObj;
+    }));
+  });
+  // console.log(`ap${aP}`);
+  return aP;
+});
 
-const fetch = () => {
-  console.log('GET /data');
-  const newBookLibrary = [];
-  return Models.quizques.findAll().then(allData =>
-    allData.map((bookData) => {
-      const quesidHere = bookData.quesid;
-      return Models.quizoptions.findAll({ where: { quesid: quesidHere } })
-        .then((records) => {
-          const newRec = {
-            quesid: records.quesid,
-            ques: bookData.ques,
-            answer: bookData.answer,
-            options: records.options,
-          };
-          newBookLibrary.push(newRec);
-        });
-    })).then(returned => Promise.all(returned).then(() => newBookLibrary));
-};
-module.exports = fetch;
+module.exports = getQuesAndOptions;
