@@ -1,23 +1,23 @@
 {
   "development": {
-    "username": "db_quiz",
+    "username": "quizmaster",
     "password": "root",
-    "database": "database_development",
+    "database": "db_quiz",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "postgres"
   },
   "test": {
-    "username": "db_quiz",
+    "username": "quizmaster",
     "password": "root",
-    "database": "database_test",
+    "database": "db_quiz",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "postgres"
   },
   "production": {
-    "username": "db_quiz",
+    "username": "quizmaster",
     "password": "root",
-    "database": "database_production",
+    "database": "db_quiz",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "postgres"
   }
 }
