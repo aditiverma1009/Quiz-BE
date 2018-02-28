@@ -2,7 +2,7 @@ const Models = require('../../models');
 
 const handlerfn = (request, response) => {
   console.log(request.payload.username);
-  console.log(request.payload.quesid);
+  console.log(request.payload.qquesid);
   console.log(request.payload.selectedOption);
 
   const usern = request.payload.username;

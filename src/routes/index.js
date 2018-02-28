@@ -6,6 +6,7 @@ const updateOption = require('./updateOption');
 const fetchOption = require('./fetchOption');
 const getUserScore = require('./getUserScores');
 const leadership = require('./leadership');
+const calculateScore = require('./calculateScore');
 
 const getHelloWorld = (request, response) => {
   response('On root. Go to login.');
@@ -22,4 +23,5 @@ module.exports = [{
   .concat(getUserScore)
   .concat(leadership)
   .concat(updateOption)
-  .concat(fetchOption);
+  .concat(fetchOption)
+  .concat(calculateScore);

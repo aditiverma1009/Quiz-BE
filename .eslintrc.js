@@ -1,5 +1,5 @@
 module.exports = {
-    "extends": "airbnb-base",
+   q "extends": "airbnb-base",
     "env": {
         "jest": true
     }

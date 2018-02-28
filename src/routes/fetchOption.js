@@ -8,7 +8,10 @@ const handlerfn = (request, response) => {
   const quesi = request.payload.quesid;
 
 
-  Models.usertables.findOne({ where: { username: usern, quesid: quesi } })
+  Models.usertables.findOne({
+    where: { username: usern, quesid: quesi },
+    raw: true,
+  })
     .then((rec) => {
       // not found quesid
       if (rec === null) {
